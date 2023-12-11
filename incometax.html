@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">
+<title> Income Tax Calculator Program </title>
+
+<style>
+
+  body {
+  color: white;
+  font-family: Pixelify Sans;
+  background-image:url('https://miro.medium.com/v2/resize:fit:1358/0*eIhVp0KXrXSSHORN.gif');
+  background-size: cover;
+  }
+
+  .content{
+  position: absolute;
+  left: 75px;
+  top: 75px;
+  width: 1000px;
+  padding: 10px;
+  font-size: 22px;
+  }
+
+  #main{
+  position: absolute;
+  bottom:20px;
+  left:20px;
+  } 
+
+</style>
+</head>
+
+<body>
+
+<div class = "content">
+
+<h1>This is an Income Tax Calculator</h1>
+
+<label for="income">Income: </label>
+<input id="income" type="number">
+
+<button onclick="incometax()"> SOLVE </button>
+
+<br> <br>
+
+<label for="taxableincome">Income Tax: </label>
+<input id="taxableincome" type="number" readonly>
+
+</div>
+
+<br> <br>
+
+<a href ="index.html" id = "main">Back to Homepage</a>
+
+<script>
+
+function incometax()
+{
+	var income, incometax, it;
+	income = document.getElementById("income").value*1;
+	incometax = document.getElementById("taxableincome").value*1;
+    
+    if (income<250000 ) it='A'
+  	else if (income >= 250000 && income < 400000) it='B'
+   	else if (income >=400000 && income < 800000) it = 'C'
+   	else if (income >=800000 && income < 2000000) it = 'D'
+   	else if (income >=2000000 && income < 8000000) it = 'E'
+   	else it = 'F'
+      
+    switch(it)
+    {
+      case 'A': incometax = 0;
+                break;
+
+      case 'B': incometax = (income-250000)*0.2;
+                break;
+
+      case 'C': incometax = ((income-400000)*0.25)+30000;
+                break;
+
+      case 'D': incometax = ((income-800000)*0.30)+130000;
+                break; 
+
+      case 'E': incometax = ((income-2000000)*0.32)+490000;
+                break; 
+
+      case 'F': incometax = ((income-8000000)*0.35)+2410000;
+                break;
+    }
+
+  document.getElementById("taxableincome").value=incometax;	
+
+}
+
+</script>
+
+</body>
+
+</html>
