@@ -1,16 +1,48 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <title>Introduction to Computing Website</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">
+
 <style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
+body {
+color: white;
+font-family: Pixelify Sans;
+font-size: 22px;
+background-image:url('https://cdnb.artstation.com/p/assets/images/images/036/271/507/original/bizarre-beasties-snow.gif?1617197303');
+background-size: cover;
+}
+
+
+.w3-content{
+    position: absolute;
+    left: 60px;
+    top: 30px;
+    width: 600px;
+    padding: 10px;
+    font-size: 15px;
+    }
+
+#band{
+    
+    position:static;
+    left: 50px;
+    top: 50px;
+    width: 600px;
+    padding: 10px;
+
+}
+
+
 </style>
+</head>
+
 <body>
 
 <!-- Navbar -->
@@ -18,20 +50,44 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
- 
    
     <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">Input Examples<i class="fa fa-caret-down"></i></button>     
+      <button class="w3-padding-large w3-button" title="More">Convertion <i class="fa fa-caret-down"></i></button>     
            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+             <a href="slay.html"  class="w3-bar-item w3-button">Say Hello</a>
              <a href="add2no.html" class="w3-bar-item w3-button">Add 2 numbers</a>
-             <a href="#" class="w3-bar-item w3-button">Fahrenheit to Celsius</a>
-            <a href="#" class="w3-bar-item w3-button">Meters to Feet</a>
-            <a href="#" class="w3-bar-item w3-button">Feet to Meters</a>
-      </div>
-    </div>
+             <a href="gradecomputation.html" class="w3-bar-item w3-button">Grade Computation</a>
+             <a href="celcius.html" class="w3-bar-item w3-button">Celsius to Fahrenheit</a>
+             <a href="fahrenheit.html" class="w3-bar-item w3-button">Fahrenheit to Celsius</a>
+             <a href="metertofeet.html" class="w3-bar-item w3-button">Meters to Feet</a>
+             <a href="feettometer.html" class="w3-bar-item w3-button">Feet to Meters</a>
+          </div>
+        </div>
 
-   
-   
+    <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">Income Tax <i class="fa fa-caret-down"></i></button>     
+             <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="incometax.html" class="w3-bar-item w3-button">Income Tax Calculator </a>
+          </div>
+        </div>
+
+   <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">Loops <i class="fa fa-caret-down"></i></button>     
+             <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="nthfactorial.html" class="w3-bar-item w3-button">Factorial - Using While Loop </a>
+                <a href="sumnthnumber.html" class="w3-bar-item w3-button">Sum - Using Do While Loop</a>
+                <a href="average.html" class="w3-bar-item w3-button">Average - Using For Loop</a>
+          </div>
+        </div>
+
+   <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">Simple Payroll <i class="fa fa-caret-down"></i></button>     
+             <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="simplepayroll.html" class="w3-bar-item w3-button">Simple Payroll </a>
+                
+          </div>
+        </div>
+
   </div>
 </div>
 
@@ -44,21 +100,21 @@ body {font-family: "Lato", sans-serif}
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
    <!-- The Band Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">CS 1130 - Introduction to Computing</h2>
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px;" id="band">
+    <h2 class="w3-wide" style="font-family: Pixelify Sans;">CS 1130 - Introduction to Computing Website Project</h2>
      <br>
-     <h2>
-     Student Assignments:  
-     </h2>
+     <h2 style="font-family: Pixelify Sans;"> Projects: </h2>
       <br>
-      <h3>Assignment #1 - Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</h3>
-      <h3>Assignment #2 - Income Tax Calculator </h3>
-      <h3>Assignment #3 - Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</h3>
-      <h3>Assignment #4 - Simple Payroll </h3>
+      <h3 style="font-family: Pixelify Sans;">Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</h3>
+      <br>
+      <h3 style="font-family: Pixelify Sans;">Income Tax Calculator </h3>
+      <br>
+      <h3 style="font-family: Pixelify Sans;">Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</h3>
+      <br>
+      <h3 style="font-family: Pixelify Sans;">Simple Payroll </h3>
 
       <br>
-      <h2>*** All Assignments are Due on December 6, 2023 *** </h2>
-      <h4> Upload and launch the pages in your specified github  or w3spaces website. </h4>
+     
      
 
 
