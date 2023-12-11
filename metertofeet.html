@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">    
+<style>
+
+    body {
+    color: crimson;
+    font-family: Pixelify Sans;
+    background-image: url('https://i.pinimg.com/originals/b8/2f/28/b82f28a7e9c8fcb3868d3d94652c107c.gif');
+    background-size: cover;
+    }
+
+    h2{
+    font-size:30px
+    }
+
+    .everything{
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    }
+
+    #main{
+    position: absolute;
+    bottom:20px;
+    left:20px;
+    } 
+
+</style>
+
+<title> Meter to Feet Converter</title>
+
+</head>
+
+<body>
+
+<div class = "everything">
+
+<h2> This is a Meter to Feet converter </h2>
+
+<br>
+<label for="meter">Measurement in Meter: </label>
+<input id="meter" type="number">
+
+
+<button onclick="computefeet()">Convert</button>
+<br>
+
+<br>
+<label for="feet">Feet: </label>
+<input id="feet" type="number" readonly>
+
+<br>
+<br>
+
+</div>
+
+<a href ="index.html" id = "main">Back to Homepage</a>
+<br>
+
+<script>
+
+    function computefeet()
+    {
+
+	var m, f
+	m = document.getElementById("meter").value*1;
+	f = m*3.28084;
+	document.getElementById("feet").value=f;
+
+    }
+</script>
+
+</body>
+</html>
