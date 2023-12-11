@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">
+
+<style>
+
+    body {
+    color: white;
+    font-family: Pixelify Sans;
+    font-size: 22px;
+    background-image: url('https://openseauserdata.com/files/114265f662ffeeeb65cf982dc0a54e6a.gif');
+    background-size: cover;
+    }
+
+    .content{
+    position: absolute;
+    left: 60px;
+    top: 30px;
+    width: 600px;
+    padding: 10px;
+    font-size: 20px;
+    }
+
+    #main{
+    position: absolute;
+    bottom:20px;
+    left:20px;
+    } 
+
+    h3{
+    font-size:30px;  
+    }
+
+
+</style>
+
+<title> Nth Factorial Program </title>
+
+</head>
+
+<body>
+
+<div class = "content">
+    <h1>This is a Nth Factorial Program</h1>
+
+
+    <label for="nth">Enter number: </label>
+    <input id="nth" type="number"></input>
+
+    <button id="btnfactorial"> SHOW NUMBERS: </button>
+
+    <br> <br>
+
+    <h3 id = "comment"></h3>
+
+    <br> <br>
+
+</div>
+
+<a href ="index.html" id = "main">Back to Homepage</a>
+
+<br> <br>
+
+<script>
+
+document.getElementById("btnfactorial").addEventListener("click", () => 
+{
+	var nth, fact, i;
+        nth = document.getElementById("nth").value*1;
+        i = 1;
+        fact = 1;
+
+        while(i<=nth){
+            fact = fact*i 
+            i++
+            }
+
+        document.getElementById("comment").innerHTML="The factorial of the number is: " 
+            + fact;
+
+});
+</script>
+
+</body>
+</html>
