@@ -1,0 +1,85 @@
+  <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">
+
+<style>
+
+    body{
+    color: white;
+    font-family: Pixelify Sans;
+    font-size: 22px;
+    background-image: url('https://openseauserdata.com/files/114265f662ffeeeb65cf982dc0a54e6a.gif');
+    background-size: cover;
+    }
+
+    .content{
+    position: absolute;
+    left: 60px;
+    top: 30px;
+    width: 600px;
+    padding: 10px;
+    font-size: 20px;
+    }
+
+    #main{
+    position: absolute;
+    bottom:20px;
+    left:20px;
+    } 
+
+    h3{
+    font-size:30px;  
+    }
+
+</style>
+<title> Sum of the First Nth Numbers Program </title>
+</head>
+
+<body>
+
+<div class = "content">
+
+<h1>This is a Sum of the First Nth Numbers Program</h1>
+
+
+<label for="nth">Enter number: </label>
+<input id="nth" type="number"></input>
+
+<button id="btnsum"> SHOW NUMBERS: </button>
+
+<br> <br>
+
+<h3 id = "comment"></h3>
+
+<br> <br>
+
+</div>
+
+<a href ="index.html" id = "main">Back to Homepage</a>
+
+<br> <br>
+
+<script>
+
+document.getElementById("btnsum").addEventListener("click", () => 
+{
+	var nth, sum, i;
+        nth = document.getElementById("nth").value*1;
+        i = 1;
+        sum = 0;
+
+        do{
+        sum += i;
+        i++;
+        }
+        while(i<=nth);
+
+        document.getElementById("comment").innerHTML="The sum of the nth numbers is: " 
+            + sum;
+
+});
+</script>
+
+</body>
+</html>
