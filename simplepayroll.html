@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">
+
+<style>
+
+  body {
+  color: white;
+  font-family: Pixelify Sans;
+  background-image:url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9100d753-02ac-4ed8-ac98-5e45d6deecad/dg5atch-900fcdd9-f0c9-4f05-897d-0f228292175d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkxMDBkNzUzLTAyYWMtNGVkOC1hYzk4LTVlNDVkNmRlZWNhZFwvZGc1YXRjaC05MDBmY2RkOS1mMGM5LTRmMDUtODk3ZC0wZjIyODI5MjE3NWQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.AkiDGlaT4SHsAUo9_o7Tg0qil4JAttmwGjYYmQ2fBfw');
+  background-size: cover;
+  }
+        
+  #cart {
+  position: absolute;
+  left: 200px;
+  top: 400px;
+  width: 800px;
+  font-family: Pixelify Sans;
+  border-collapse: collapse;
+  }
+        
+  #cart td, #cart th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  }
+        
+  #cart tr:nth-child(even){background-color: #90EE90;}
+  #cart tr:nth-child(odd){background-color: #ADD8E6;}
+              
+  #cart th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #C4A484;
+  color: white;
+  }
+
+  #main{
+  position:absolute;
+  bottom:20px;
+  left:20px:
+  font-size: 30px;
+  }  
+
+  .contents{
+  position: absolute;
+  left: 180px;
+  top: 200px;
+  width: 800px;
+  padding: 10px;
+  font-size: 15px;
+  }
+
+  h1{
+  position: absolute;
+  left: 180px;
+  top: 100px;
+  font-size: 40px;
+  }
+
+
+</style>
+
+</head>
+<body>
+
+
+
+<h1>Simple Payroll</h1>
+
+<br>
+
+<div class = "contents">
+
+<p>
+
+
+<label for="empselect">Choose an Employee:</label>    
+<select  id="empselect">
+  <option value="Jolyne">Jolyne</option>
+  <option value="Frieren">Frieren</option>
+  <option value="Shinji">Shinji</option>
+  <option value="Yoru">Yoru</option>
+  <option value="Asa">Asa</option>
+  <option value="Denji">Denji</option>
+  <option value="Denji">Itadori</option>
+  <option value="Gojo">Gojo</option>
+</select>
+
+<label for="days">Days Worked:</label>
+<input id="days" name="days" type="number" ></input>
+<label for="wage">Daily Wage:</label>
+<input id="wage" name="wage" type="number"></input>
+<br><br>
+<label for="amount">Gross Pay:</label>
+<input id="amount" name="amount" type="number" readonly></input>
+
+<button id="addtocart">Add to Cart</button>
+</p>
+<p>
+<label for="employee">Employees:</label>
+<input id="employee" name="employee" type="number" readonly></input>
+<button id="clearcart">Clear</button>
+<!--   <button onclick="showcart()">Show Cart</button> --> 
+<label for="delemp">Delete Employee:</label>
+<input id="delemp" name="delitem" type="number" ></input>
+<button id="deleteitem" >Delete</button>  
+
+</div>
+
+</p>
+
+
+<p id="cart"></p>
+
+<a href="index.html" id = "main">Back to Home Page</a>
+
+<script>
+
+    document.addEventListener("load",()=> {   // or just plain addEventListener will do
+        initcart();
+    });
+
+     document.getElementById("days").addEventListener("keyup",()=>   
+       { 
+          computeamount();
+       });
+
+       document.getElementById("wage").addEventListener("keyup",()=>   
+       { 
+          computeamount();
+       });
+    // Clear Cart
+     document.getElementById("clearcart").addEventListener("click",()=>   
+       {
+        var toclear;
+
+        toclear=confirm("Delete all item(s) from cart ?");
+
+        if (toclear) {
+             initcart();
+         }
+            
+      });
+
+    // Add item to cart
+  document.getElementById("addtocart").addEventListener("click",()=>   
+       {
+        
+         var cartitem = {
+             "employee": "1",
+             "wage": 0,
+             "days": 1,
+             "itemamount" : function itemamount(){
+                 return Math.round(this.wage*this.days);  
+               }
+            };
+
+          cartitem.employee=document.getElementById("empselect").value;
+          cartitem.days=document.getElementById("days").value;
+          cartitem.wage=document.getElementById("wage").value;
+
+          console.log(cartitem.empselect);
+          console.log(cartitem.days);
+          console.log(cartitem.wage);
+
+
+           cart.push(cartitem);
+          //cart[cart.length]=cartitem;
+
+          console.log(cart.length);
+          document.getElementById("empselect").value=cart.length;
+
+          showcart();
+
+    });
+
+    // Compute Amount per Item
+    function computeamount() {
+          var q,p,q;
+          q = document.getElementById("days").value*1;
+          p = document.getElementById("wage").value*1;
+
+          a = Math.round(q*p);  // rounds off to 2 decimal places
+
+          console.log(a);
+
+          document.getElementById("amount").value=a;
+        
+    }    
+    
+    // Delete item from chart
+  document.getElementById("delemp").addEventListener("click",()=>   
+      {
+    
+        var todelete;
+        var itemno;
+
+        itemno=document.getElementById("delemp").value;
+
+        todelete=confirm("Delete emp no. "+itemno+"?");
+
+        if (todelete) {
+
+            cart.splice(itemno-1,1);
+            document.getElementById("empselect").value=cart.length;
+             showcart();   
+        }
+
+    });
+
+    // Show the contents of the cart
+    function showcart(){
+
+        var i,l,carttext,totalamount,ln;
+        var theader,tbody,tb,tfooter;
+
+    
+        // Generate table header;
+        theader ="<thead>";
+        theader+="<tr>";
+        theader+="<th>No.</th>";
+        theader+='<th style="text-align:middle" >Employee</th>';
+        theader+="<th>Days Worked</th>";
+        theader+='<th style="text-align:middle">Daily Wage</th>';
+        theader+="<th>Total Pay</th>";
+        theader+="</tr>";
+        theader+="</thead>";
+        
+        // Generate Table Body
+        l = cart.length;
+      
+        
+        for (i=0,totalamount=0,carttext="",tbody='';i<l;i++){
+            ln=i+1;    
+            tbody += "<tr>"
+                +'<td>'+ln+' </td>'
+                +'<td>'+cart[i].employee+' </td>'
+                +'<td style="text-align:right">'+cart[i].days+'</td>'
+                +'<td style="text-align:right">'+cart[i].wage+'</td>'
+                +'<td style="text-align:right">'+cart[i].itemamount()+'</td>'                
+                +"</tr>";
+                       
+            totalamount+=cart[i].itemamount();
+          
+
+        }
+
+        //tbody += "</tbody>";
+
+        // Generate table footer;
+        tfooter ="<tfoot>";
+        tfooter+="<tr>";
+        tfooter+='<th style="text-align:left">'+cart.length+'</th>';
+        tfooter+='<th style="text-align:left">Employee</th>';
+        tfooter+='<th></th>';
+        tfooter+='<th>Total Amount</th>';
+        tfooter+='<th style="text-align:right">'+totalamount+'</th>';
+        tfooter+="</tr>";
+        tfooter+="</tfoot>";
+
+       console.log(theader+tbody+tfooter);
+        document.getElementById("cart").innerHTML=
+           "<table>"+theader+tbody+tfooter+"</table>";
+
+
+    }
+
+    // Initialize cart CALLED ALSO IN BODY ONLOAD      
+    function initcart()
+     {
+        console.log("1.passed here.");       
+        cart=[];
+        document.getElementById("employee").value=cart.length;
+        document.getElementById("cart").innerHTML="";
+
+            
+    }  
+// Global variable
+var cart = []; 
+
+</script>
+</body>
+</html>
